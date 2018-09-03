@@ -1,8 +1,25 @@
-<div class="scroll-nav-wrap">
-  <nav class="scroll-nav scroll-init">
-      <ul>
-          <li><a class="scroll-link act-link act-scrlink" routerLink="/home">Home</a></li>
-          <li><a class="scroll-link" routerLink="/services">Services</a></li>       
-      </ul>
-  </nav>
-</div> 
+<nav class="navbar header-top sticky-top navbar-expand-lg  navbar-blue">
+    <div class="container">
+        <a class="navbar-brand" href="#">LoanPalace</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav ml-md-auto d-md-flex">
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="home" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="services" routerLinkActive="active">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="contact" routerLinkActive="active">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="contact" routerLinkActive="active">Contact Us</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
