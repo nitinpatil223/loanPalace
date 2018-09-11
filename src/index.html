@@ -22,6 +22,15 @@
 <script src="./assets/lib/wow/wow.min.js"></script>
 <script>
     new WOW().init();
+
+    $(window).on("scroll", function() {
+    if($(window).scrollTop() > 50) {
+        $(".header-top ").addClass("active-header");
+    } else {
+        //remove the background property so it comes transparent again (defined in your css)
+       $(".header-top ").removeClass("active-header");
+    }
+});
     </script>
 
 <!-- <script src="./assets/lib/parallax/parallax.js"></script> -->
