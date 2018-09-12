@@ -1,24 +1,40 @@
 <nav class="navbar header-top sticky-top navbar-expand-lg  navbar-blue">
     <div class="container">
         <a class="navbar-brand" href="#"><img src="./assets/img/logo1.jpg"></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler menu-web" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
             <i class="fas fa-bars"></i>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarText">
+        </button> 
+         <div class="collapse navbar-collapse menu-web" id="navbarText">
             <ul class="navbar-nav ml-md-auto d-md-flex">
                 <li class="nav-item">
                     <a class="nav-link" routerLink="home" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">About Us
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link">Products</a>
+                    <a class="nav-link" routerLink="services" routerLinkActive="active">Products</a>
                 </li>
               
                 <li class="nav-item">
-                    <a class="nav-link">Contact Us</a>
+                    <a class="nav-link" routerLink="contact-us" routerLinkActive="active">Contact Us</a>
                 </li>
             </ul>
             <a class="btn btn-warning" href="#apply">Apply</a>
-        </div>
+        </div> 
+
+        <div class="dropdown top-menu-mobile">
+                <button class="navbar-toggler dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-bars"></i>
+                </button>
+                <div class="dropdown-menu movedown" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item" routerLink="home" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">About Us</a>
+                  <a class="dropdown-item" routerLink="services" routerLinkActive="active">Products</a>
+                  <a class="dropdown-item" routerLink="contact-us" routerLinkActive="active">Contact Us</a>
+                  <a class="dropdown-item btn apply-btn" href="#apply">Apply Now</a>
+                </div>
+              </div>
     </div>
 </nav>
+
+
+
+
