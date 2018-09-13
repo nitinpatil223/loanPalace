@@ -8,11 +8,13 @@ import { FooterComponent } from './footer/footer.component';
 import { LocationStrategy, HashLocationStrategy } from '../../node_modules/@angular/common';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+
   ],
   imports: [
     BrowserModule,

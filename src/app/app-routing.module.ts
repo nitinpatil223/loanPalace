@@ -3,12 +3,16 @@ import { Routes, RouterModule } from '@angular/router';
 
 import{HomeComponent} from './home/home.component';
 import{ServicesComponent} from './services/services.component';
+import{ProductsComponent} from './products/products.component';
+import {ContactComponent} from './contact/contact.component';
 
 const routes: Routes = [
 
   { path: 'home', component: HomeComponent },
   { path: 'services', component: ServicesComponent },
-  {path:'',redirectTo: '/home', pathMatch: 'full'},
+  { path: 'products', component: ProductsComponent },
+  { path: 'contact', component: ContactComponent },
+  { path:'',redirectTo: '/home', pathMatch: 'full'},
 
 ];
 
@@ -18,7 +22,9 @@ const routes: Routes = [
   declarations:[
    
     HomeComponent,
-    ServicesComponent
+    ServicesComponent,
+    ProductsComponent,
+    ContactComponent
   ],
 })
 export class AppRoutingModule { } 
