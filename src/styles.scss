@@ -577,6 +577,17 @@ footer {
     border-color: transparent;
     transition: all 0.2s ease-in-out;
     }
+    .active-header {
+        background-color: #c82333;
+        min-height: 75px !important;
+        // .navbar-brand img {
+        //     width: 225px;
+        //     height: 60px;
+        // }
+        .navbar-toggler {
+            color: #c82333;
+        }
+    }
 }
 
 @keyframes mymove
