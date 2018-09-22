@@ -7,12 +7,13 @@ body {
     font-size: 14px;
     position: relative;
     font-family: 'Montserrat', sans-serif;
+    padding-top: 95px;
 }
 
 
 .navbar-blue {
-    background-color: #15549A;
-    border-color: #15549A;
+    background-color: #15549a;
+    border-color: #15549a;
     transition: all 0.2s ease-in-out;
     opacity: 1 !important;
     .navbar-nav { 
@@ -430,6 +431,9 @@ footer {
 }
 
 @media (max-width: 767px) {
+    body {
+        padding-top: 54px;
+    }
     .menu-web {
         display: none;
     }
@@ -565,6 +569,15 @@ footer {
     }
 }
 
+
+.home-body {
+    padding-top:0;
+    .navbar-blue {
+    background-color: transparent;
+    border-color: transparent;
+    transition: all 0.2s ease-in-out;
+    }
+}
 
 @keyframes mymove
 { from {top:0px; opacity: 0;}
