@@ -288,6 +288,40 @@ body {
       }
   }
 
+  /*refer & earn*/
+
+  .refer-head-area {
+    background: rgba(248, 248, 248, 0.8) url("./assets/img/apply-bg.jpeg");
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow: hidden;
+    position: relative;
+    padding: 50px 0;
+    text-align: center;
+    h2 {
+        color: #fff;
+        font-size: 36px;
+        font-weight: 500;
+        line-height: 50px;
+        margin-bottom: 30px;
+    }
+    h4 {
+        color: #fff;
+        margin: 0;
+        font-size: 16px;
+
+    }
+    .overly {
+        background: rgba(0, 0, 0, 0.80);
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top:0;
+    }
+  }
+
   #footer {
     bottom: 0;
     width: 100%;
