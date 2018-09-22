@@ -12,6 +12,7 @@ body {
     background-color: #15549A;
     border-color: #15549A;
     transition: all 0.2s ease-in-out;
+    opacity: 1 !important;
     .navbar-nav { 
         .nav-link {
             color: #fff;
@@ -25,7 +26,7 @@ body {
     .navbar-brand {
         color: #fff;
         img {
-            width: 300px;
+            width: 390px;
             height: 85px;
         }
     }
@@ -39,14 +40,14 @@ body {
 }
 
 .active-header {
-    background-color: #b52a23;
+    background-color: #c82333;
     min-height: 75px !important;
     // .navbar-brand img {
     //     width: 225px;
     //     height: 60px;
     // }
     .navbar-toggler {
-        color: #b52a23;
+        color: #c82333;
     }
 }
 /*btns*/
@@ -66,7 +67,6 @@ body {
     font-weight: 600;
     margin-bottom: 70px;
     position: relative;
-    text-transform: capitalize;
 }
 .section-headline h2::after {
     border: 1px solid #333;
@@ -154,7 +154,7 @@ body {
                 display: block;
                 padding: 5px 0;
             i {
-                    color: #b52a23;
+                    color: #c82333;
                     padding-right: 10px;
                     font-size: 12px;
                 }
@@ -181,7 +181,7 @@ body {
             align-items: center;
             justify-content: center;
             margin-bottom: 20px;
-            color: #b52a23;
+            color: #c82333;
             border: 1px solid #ececec;
         }
         h4 {
@@ -243,13 +243,43 @@ body {
         height: 100%;
         top:0;
     }
-    .btn {
-        background-color: #fff;
-        border-color: #fff;
-        margin: 0 20px;
-        font-weight: bold;
-        font-size: 20px;
+   
+    .nav {
+        justify-content: center;
+        border: 0;
+        li {
+            a {
+                background-color: #fff;
+                border-color: #fff;
+                margin: 0 20px;
+                font-weight: bold;
+                font-size: 18px;
+                border-radius: 4px;
+                color: #000;
+                &.active {
+                    background-color: #c82333;
+                    color: #fff;
+                    border-color:#c82333;
+                }
+            }
+        }
     }
+  }
+
+  .products-details {
+      .tab-content {
+          padding: 30px 0;
+          .enquiry-btn {
+              text-align: center;
+              padding: 20px 0 0;
+              .btn {
+                  background-color: #c82333;
+                  border-color:#c82333;
+                  color: #fff;
+                  font-size: 20px;
+              }
+          }
+      }
   }
 
   #footer {
@@ -292,7 +322,7 @@ footer {
                 span {
                     flex: 0 0 32px;
                     i {
-                        color:#b52a23;
+                        color:#c82333;
                     }
                 }
             }
@@ -465,6 +495,26 @@ footer {
                 font-size: 18px;
                 margin-top: 20px;
             }
+        }
+    }
+}
+@media (max-width: 441px) {
+
+    .section-headline h2 {
+        font-size: 25px !important;
+        margin-bottom: 55px!important;
+    }
+    .how-it-works {
+        margin-top: 35px!important;
+    }
+    .single-icon { 
+        h4 {
+         font-size: 20px!important;
+        }
+        i {
+            font-size: 30px!important;
+            width: 75px!important;
+            height: 75px!important;
         }
     }
 }

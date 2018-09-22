@@ -5,12 +5,14 @@ import{HomeComponent} from './home/home.component';
 import{ServicesComponent} from './services/services.component';
 import{ProductsComponent} from './products/products.component';
 import {ContactComponent} from './contact/contact.component';
+import { ReferAndEarnComponent } from './refer-and-earn/refer-and-earn.component';
 
 const routes: Routes = [
 
   { path: 'home', component: HomeComponent },
   { path: 'services', component: ServicesComponent },
   { path: 'products', component: ProductsComponent },
+  { path: 'referandearn', component: ReferAndEarnComponent },
   { path: 'contact', component: ContactComponent },
   { path:'',redirectTo: '/home', pathMatch: 'full'},
 
@@ -24,7 +26,8 @@ const routes: Routes = [
     HomeComponent,
     ServicesComponent,
     ProductsComponent,
-    ContactComponent
+    ContactComponent,
+    ReferAndEarnComponent
   ],
 })
 export class AppRoutingModule { } 
