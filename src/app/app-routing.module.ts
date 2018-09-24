@@ -1,3 +1,4 @@
+import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
@@ -6,6 +7,7 @@ import{ServicesComponent} from './services/services.component';
 import{ProductsComponent} from './products/products.component';
 import {ContactComponent} from './contact/contact.component';
 import { ReferAndEarnComponent } from './refer-and-earn/refer-and-earn.component';
+
 
 const routes: Routes = [
 
@@ -19,7 +21,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [FormsModule, RouterModule.forRoot(routes)],
   exports: [RouterModule],
   declarations:[
    
