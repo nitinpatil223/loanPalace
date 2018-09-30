@@ -67,20 +67,21 @@
               <div id="errormessage"></div>
               <form action="" method="post" role="form" class="contactForm">
                 <div class="form-group">
-                  <input [(ngModel)]="contactus.name" type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
-                  <div class="validation"></div>
+                  <input [(ngModel)]="contactus.name" type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4"  />
+                   <span *ngIf="false" style="color: red">Please enter your name.</span>
+                 
                 </div>
                 <div class="form-group">
-                  <input [(ngModel)]="contactus.email" type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
-                  <div class="validation"></div>
+                  <input [(ngModel)]="contactus.email" type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email"  />
+                  <span style="color: red">Please enter your email id.</span>
                 </div>
                 <div class="form-group">
-                  <input [(ngModel)]="contactus.subject" type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
-                  <div class="validation"></div>
+                  <input [(ngModel)]="contactus.mobileno" type="text" class="form-control" name="mobile" id="mobile" placeholder="Mobile No." data-rule="minlen:4" />
+                  <span style="color: red">Please enter your mobile no.</span>
                 </div>
                 <div class="form-group">
-                  <textarea [(ngModel)]="contactus.message" class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
-                  <div class="validation"></div>
+                  <textarea [(ngModel)]="contactus.message" class="form-control" name="message" rows="5" data-rule="required"  placeholder="Message"></textarea>
+                  <span style="color: red">Please enter your message.</span>
                 </div>
                 <div class="text-center"><button class="btn btn-danger" (click)="sendMessage()">Send Message</button></div>
               </form>

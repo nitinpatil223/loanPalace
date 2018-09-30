@@ -23,11 +23,25 @@ export class SendEmailService {
   }
 
   public getEncryptedValue(model : string){
-    let password = 'juophhdhdusujso4477dfdsfd';
-    const key = CryptoJS.enc.Base64.parse(password);
-    const iv  = CryptoJS.enc.Base64.parse("e84ad660c4721ae0e84ad660c4721ae0");
-    let encrypted = CryptoJS.AES.encrypt(model, key, {iv: iv}).toString();
-    return encrypted;
+    
+    // const key = CryptoJS.enc.Base64.parse("2811da22377d62fcfdb02f29aad77d9e");
+    // const iv  = CryptoJS.enc.Base64.parse("2811da22377d62fcfdb02f29aad77d9e");
+   
+    // let encrypted = CryptoJS.AES.encrypt(model, key, { mode: CryptoJS.mode.ECB,
+    //   padding: CryptoJS.pad.NoPadding},).toString();
+
+    var key = CryptoJS.enc.Utf8.parse('8080808080808080');  
+    var iv = CryptoJS.enc.Utf8.parse('8080808080808080');  
+    var encryptedlogin = CryptoJS.AES.encrypt(CryptoJS.enc.Utf8.parse(model), key,  
+{  
+   keySize: 128 / 8,  
+   iv: iv,  
+   mode: CryptoJS.mode.CBC,  
+   padding: CryptoJS.pad.Pkcs7  
+});   
+
+    return encryptedlogin.toString();
   }
+ 
   
 }

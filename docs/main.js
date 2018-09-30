@@ -277,13 +277,13 @@ var ContactComponent = /** @class */ (function () {
         this._service = _service;
         this.contactus = new _Model_ContactUs__WEBPACK_IMPORTED_MODULE_1__["ContactUs"]();
         this.contactusEncrypted = new _Model_ContactUs__WEBPACK_IMPORTED_MODULE_1__["ContactUs"]();
-        this.sendMessage = function (contactus) {
+        this.sendMessage = function () {
             debugger;
             this.contactusEncrypted.name = this._service.getEncryptedValue(this.contactus.name);
             this.contactusEncrypted.subject = this._service.getEncryptedValue(this.contactus.subject);
             this.contactusEncrypted.email = this._service.getEncryptedValue(this.contactus.email);
             this.contactusEncrypted.message = this._service.getEncryptedValue(this.contactus.message);
-            return this._service.sendEmail(this.contactusEncrypted);
+            return this._service.sendEmail(this.contactus);
         };
     }
     ContactComponent.prototype.ngOnInit = function () {
@@ -314,10 +314,11 @@ var ContactComponent = /** @class */ (function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SendEmailService", function() { return SendEmailService; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/http */ "./node_modules/@angular/http/fesm5/http.js");
-/* harmony import */ var crypto_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! crypto-js */ "./node_modules/crypto-js/index.js");
-/* harmony import */ var crypto_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(crypto_js__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../environments/environment */ "./src/environments/environment.ts");
+/* harmony import */ var crypto_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! crypto-js */ "./node_modules/crypto-js/index.js");
+/* harmony import */ var crypto_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(crypto_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../environments/environment */ "./src/environments/environment.ts");
+/* harmony import */ var rxjs_Rx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/Rx */ "./node_modules/rxjs-compat/_esm5/Rx.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -331,35 +332,31 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var SendEmailService = /** @class */ (function () {
     function SendEmailService(_http) {
         this._http = _http;
     }
     SendEmailService.prototype.sendEmail = function (contactusEncrypted) {
-        // var model ={
-        //   name:contactusEncrypted.name,
-        //   subject:contactusEncrypted.subject,
-        //   email:contactusEncrypted.email,
-        //   message:contactusEncrypted.message
-        // }
-        // return this._http.post(environment.apiUrl + 'SendEmail/mydemo1', model).subscribe();
-        var body = JSON.stringify(contactusEncrypted);
-        var headerOptions = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]({ 'Content-Type': 'application/json', 'Accept': 'application/json' });
-        var requestOptions = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["RequestOptions"]({ method: _angular_http__WEBPACK_IMPORTED_MODULE_1__["RequestMethod"].Post, headers: headerOptions });
-        return this._http.post(_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].apiUrl + 'SendEmail/mydemo1', body, requestOptions).subscribe(); //.map(x => x.json());
+        var model = {
+            name: contactusEncrypted.name,
+            subject: contactusEncrypted.subject,
+            email: contactusEncrypted.email,
+            message: contactusEncrypted.message
+        };
+        return this._http.post(_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].apiUrl + 'Account/SendEmail', model).subscribe(); //.map(x => x.json());
     };
     SendEmailService.prototype.getEncryptedValue = function (model) {
-        var password = 'juophhdhdusujso4477dfdsfd';
-        var key = crypto_js__WEBPACK_IMPORTED_MODULE_2__["enc"].Base64.parse(password);
-        var iv = crypto_js__WEBPACK_IMPORTED_MODULE_2__["enc"].Base64.parse("e84ad660c4721ae0e84ad660c4721ae0");
-        var encrypted = crypto_js__WEBPACK_IMPORTED_MODULE_2__["AES"].encrypt(model, key, { iv: iv }).toString();
+        var key = crypto_js__WEBPACK_IMPORTED_MODULE_1__["enc"].Base64.parse("e84ad660c4721ae0e84ad660c4721ae0");
+        var iv = crypto_js__WEBPACK_IMPORTED_MODULE_1__["enc"].Base64.parse("e84ad660c4721ae0e84ad660c4721ae0");
+        var encrypted = crypto_js__WEBPACK_IMPORTED_MODULE_1__["AES"].encrypt(model, key, { iv: iv }).toString();
         return encrypted;
     };
     SendEmailService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
             providedIn: 'root'
         }),
-        __metadata("design:paramtypes", [_angular_http__WEBPACK_IMPORTED_MODULE_1__["Http"]])
+        __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClient"]])
     ], SendEmailService);
     return SendEmailService;
 }());
@@ -773,7 +770,7 @@ __webpack_require__.r(__webpack_exports__);
 // The list of file replacements can be found in `angular.json`.
 var environment = {
     production: false,
-    apiUrl: 'http://localhost:49563/api/'
+    apiUrl: 'http://localhost:63520/api/'
 };
 /*
  * In development mode, for easier debugging, you can ignore zone related error
