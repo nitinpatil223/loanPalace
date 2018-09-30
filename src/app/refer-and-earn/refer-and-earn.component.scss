@@ -12,3 +12,35 @@
         margin-top: 30px;
     }
 }
+
+@media (max-width:441px) {
+    .refer-head-area {
+        padding: 20px 0;
+        h2 {
+                font-size: 24px;
+                margin-bottom: 0;
+            }
+        h4 {
+            font-size: 14px;
+            padding: 0 15px;
+            line-height: 22px
+        }
+    }
+    .our-profile .single-icon p {
+        margin-bottom: 10px !important;
+    }
+    .apply-form {
+        h4 {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .col-auto {
+            width: 100%;
+            margin-bottom: 15px;
+        }
+        .refer-btn {
+            margin-top: 10px;
+        }
+    }
+}
