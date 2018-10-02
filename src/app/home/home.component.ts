@@ -1,6 +1,6 @@
 import { Component, OnInit, Inject, Renderer2 } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
-
+import * as $ from 'jquery';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -12,6 +12,9 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.renderer.addClass(document.body, 'home-body');
+    $('html,body').animate({
+      scrollTop: 0}
+     );
   }
 
   ngOnDestroy() {

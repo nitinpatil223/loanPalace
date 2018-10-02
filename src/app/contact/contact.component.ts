@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ContactUs } from '../Model/ContactUs';
 import { SendEmailService } from './send-email.service';
-
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-contact',
@@ -15,6 +15,9 @@ export class ContactComponent implements OnInit {
   constructor(private _service : SendEmailService) { }
   nameError : boolean=false;
   ngOnInit() {
+    $('html,body').animate({
+      scrollTop: 0}
+     );
   }
 
   sendMessage = function(){

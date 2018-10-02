@@ -1,6 +1,18 @@
 .our-profile .note {
     margin-bottom: 30px;
     font-size: 16px;
+    font-weight: 600;
+}
+
+.title-margin4 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    .section-headline  h2 {
+        margin-bottom: 40px !important;
+    }
+    p {
+        margin-bottom: 10px !important;
+    }
 }
 
 .apply-form {

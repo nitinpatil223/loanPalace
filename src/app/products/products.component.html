@@ -1,7 +1,7 @@
 
 
-<div class="our-profile">
-  <div class="container title-margin">
+<div class="our-profile type-of">
+  <div class="container title-margin3">
       <div class="row">
         <div class="col-md-12 col-sm-12 col-xs-12">
           <div class="section-headline text-center wow fadeInDown">
@@ -47,10 +47,10 @@
               <h2>Products</h2>
               <ul class="nav nav-tabs">
                 <li class="nav-item">
-                  <a class="nav-link active" data-toggle="tab" href="#home"> SBI Home Loan Products </a>
+                  <a class="nav-link active sbi-btn" (click)="sbiScroll()" data-toggle="tab" href="#sbi"> SBI Home Loan Products </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" data-toggle="tab" href="#menu1"> HDFC Home Loan Products</a>
+                  <a class="nav-link" (click)="hdfcScroll()" data-toggle="tab" href="#hdfc"> HDFC Home Loan Products</a>
                 </li>
               </ul>
           </div>
@@ -61,7 +61,7 @@
       <div class="row">
         <div class="col-md-12">
           <div class="tab-content">
-            <div class="tab-pane container active" id="home">
+            <div class="tab-pane container active" id="sbi">
                 <h3>Term Loan</h3>
                 <p>It’s a normal home loan products which
                   is offered by every banks in which there is a specific time
@@ -85,13 +85,13 @@
                     <p>This is also same as term loan but designed
                       for Young generation in which their eligibility is increased.</p>
 
-                      <div class="enquiry-btn">
+                      <div class="enquiry-btn blue-enquiry">
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
                          Enquiry with SBI
                         </button>
                       </div>
             </div>
-            <div class="tab-pane container fade" id="menu1">
+            <div class="tab-pane container fade" id="hdfc">
               <h3>Term Loan</h3>
               <p>It’s a normal home loan products which
                 is offered by every banks in which there is a specific time

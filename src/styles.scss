@@ -1,12 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
 
 // @import url('https://fonts.googleapis.com/css?family=Poppins'); 
-@import url('https://fonts.googleapis.com/css?family=Montserrat');
+// @import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('https://fonts.googleapis.com/css?family=Bai+Jamjuree:300,400,400i,500,500i,600');
 body {
     font-weight: 400;
     font-size: 14px;
     position: relative;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Bai Jamjuree', sans-serif;
     padding-top: 80px;
 }
 
@@ -196,6 +197,22 @@ body {
         p {
         color: #333;
         font-size: 14px;
+        &.how-it-p {
+            font-size: 15px;
+            font-weight: 500;
+        }
+    }
+    p.homep {
+        color: #131313;
+        font-size: 14px;
+        border: 1px solid #081a98;
+        min-height: 100px;
+        padding: 10px 0;
+        border-radius: 15px;
+        background-color: #c0d8f3;
+        border-top-left-radius: 0;
+        border-bottom-right-radius: 0;
+        font-weight: bold;
     }
     
     }
@@ -260,12 +277,25 @@ body {
                 border-radius: 4px;
                 color: #000;
                 &.active {
+                    background-color: #15549a;
+                    color: #fff;
+                    border-color:#15549a;
+                }
+            }
+        }
+
+        li + li {
+            a {
+                &.active {
                     background-color: #c82333;
                     color: #fff;
                     border-color:#c82333;
                 }
             }
         }
+    }
+    &.contact {
+        padding: 34px 0;
     }
   }
 
@@ -285,6 +315,14 @@ body {
                   color: #fff;
                   font-size: 20px;
               }
+              &.blue-enquiry {
+                  .btn {
+                    background-color: #15549a;
+                    color: #fff;
+                    border-color:#15549a;
+                  }
+              
+              }
           }
       }
   }
@@ -299,14 +337,14 @@ body {
     background-attachment: fixed;
     overflow: hidden;
     position: relative;
-    padding: 50px 0;
+    padding: 20px 0;
     text-align: center;
     h2 {
         color: #fff;
         font-size: 36px;
         font-weight: 500;
         line-height: 50px;
-        margin-bottom: 30px;
+        margin-bottom: 10px;
     }
     h4 {
         color: #fff;
