@@ -63,25 +63,24 @@
           <!-- Start  contact -->
           <div class="col-md-6 col-sm-6 col-xs-12 wow fadeInRight">
             <div class="form contact-form">
-              <div id="sendmessage">Your message has been sent. Thank you!</div>
-              <div id="errormessage"></div>
+              <div *ngIf="sucessMessage==true" id="sendmessage">Your message has been sent. Thank you!</div>
               <form action="" method="post" role="form" class="contactForm">
                 <div class="form-group">
-                  <input [(ngModel)]="contactus.name" type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4"  />
-                   <span *ngIf="false" style="color: red">Please enter your name.</span>
+                  <input (keyup)="validateField()" [(ngModel)]="contactus.name" type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4"  />
+                   <span *ngIf="nameError==true" style="color: red">Please enter your name.</span>
                  
                 </div>
                 <div class="form-group">
-                  <input [(ngModel)]="contactus.email" type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email"  />
-                  <span style="color: red">Please enter your email id.</span>
+                  <input (keyup)="validateField()" [(ngModel)]="contactus.email" type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email"  />
+                  <span *ngIf="emailError==true" style="color: red">Please enter your email id.</span>
                 </div>
                 <div class="form-group">
-                  <input [(ngModel)]="contactus.mobileno" type="text" class="form-control" name="mobile" id="mobile" placeholder="Mobile No." data-rule="minlen:4" />
-                  <span style="color: red">Please enter your mobile no.</span>
+                  <input (keyup)="validateField()" [(ngModel)]="contactus.mobileno" type="text" class="form-control" name="mobile" id="mobile" placeholder="Mobile No." data-rule="minlen:4" />
+                  <span *ngIf="mobilenoError==true" style="color: red">Please enter your mobile no.</span>
                 </div>
                 <div class="form-group">
-                  <textarea [(ngModel)]="contactus.message" class="form-control" name="message" rows="5" data-rule="required"  placeholder="Message"></textarea>
-                  <span style="color: red">Please enter your message.</span>
+                  <textarea (keyup)="validateField()" [(ngModel)]="contactus.message" class="form-control" name="message" rows="5" data-rule="required"  placeholder="Message"></textarea>
+                  <span *ngIf="messageError==true" style="color: red">Please enter your message.</span>
                 </div>
                 <div class="text-center"><button class="btn btn-danger" (click)="sendMessage()">Send Message</button></div>
               </form>

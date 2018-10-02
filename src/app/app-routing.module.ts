@@ -7,7 +7,7 @@ import{ServicesComponent} from './services/services.component';
 import{ProductsComponent} from './products/products.component';
 import {ContactComponent} from './contact/contact.component';
 import { ReferAndEarnComponent } from './refer-and-earn/refer-and-earn.component';
-
+import { CommonModule } from '@angular/common';  
 
 const routes: Routes = [
 
@@ -21,7 +21,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [FormsModule, RouterModule.forRoot(routes)],
+  imports: [FormsModule,CommonModule, RouterModule.forRoot(routes)],
   exports: [RouterModule],
   declarations:[
    
