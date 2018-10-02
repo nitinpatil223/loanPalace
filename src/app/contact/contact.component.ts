@@ -12,8 +12,13 @@ export class ContactComponent implements OnInit {
 
   contactus = new ContactUs();
   contactusEncrypted = new ContactUs();
+  sucessMessage:boolean=false;
+  nameError:boolean=false;
+  messageError:boolean=false;
+  emailError:boolean=false;
+  mobilenoError:boolean=false;
   constructor(private _service : SendEmailService) { }
-  nameError : boolean=false;
+  
   ngOnInit() {
     $('html,body').animate({
       scrollTop: 0}
@@ -23,18 +28,18 @@ export class ContactComponent implements OnInit {
   sendMessage = function(){
     if(this.validateField())
     {
+      debugger;
     this.contactusEncrypted.name = this._service.getEncryptedValue(this.contactus.name);
-    this.contactusEncrypted.subject = this._service.getEncryptedValue(this.contactus.subject);
     this.contactusEncrypted.email = this._service.getEncryptedValue(this.contactus.email);
     this.contactusEncrypted.message = this._service.getEncryptedValue(this.contactus.message);
-    this.contactusEncrypted.mobileno = this._service.getEncryptedValue(this.contactus.mobileno);
+    this.contactusEncrypted.mobilenumber = this._service.getEncryptedValue(this.contactus.mobilenumber);
     this._service.sendEmail(this.contactusEncrypted);
     this.sucessMessage=true;
     this.contactus.name=null;
     this.contactus.subject=null;
     this.contactus.email=null;
     this.contactus.message=null;
-    this.contactus.mobileno=null;
+    this.contactus.mobilenumber=null;
     return;
     }
   }
@@ -70,7 +75,7 @@ export class ContactComponent implements OnInit {
       this.emailError = true;
     }
 
-    if(this.contactus.mobileno != undefined && this.contactus.mobileno != null && this.contactus.mobileno !="")
+    if(this.contactus.mobilenumber != undefined && this.contactus.mobilenumber != null && this.contactus.mobilenumber !="")
     {
       this.mobilenoError = false;
     }

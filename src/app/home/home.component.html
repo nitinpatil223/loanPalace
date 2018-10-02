@@ -231,27 +231,37 @@ able to launch new offers and benefits to our customers.</p>
                    Just fill below application form for apply online home loan.
                   </p>
                   <div class="apply-form">
-                      <form>
+                     
                           <div class="form-row align-items-center">
                             <div class="col-auto">
                               <label class="sr-only" for="inlineFormInput">Name</label>
-                              <input type="text" class="form-control" id="inlineFormInput" placeholder="Name">
+                              <input (keyup)="validateField()" [(ngModel)]="contactus.name" type="text" class="form-control" id="inlineFormInput" placeholder="Name">
+                              <label  *ngIf="nameError==true" style="color: red">Please enter your name.</label>
+                              <label *ngIf="nameError==false" style="color: red">&nbsp;</label>
                             </div>
                             <div class="col-auto">
-                              <label class="sr-only" for="inlineFormInput">Contact</label>
-                              <input type="text" class="form-control" id="inlineFormInput" placeholder="Contact">
+                              <label class="sr-only" for="inlineFormInput">Mobile No</label>
+                              <input (keyup)="validateField()" [(ngModel)]="contactus.mobilenumber" type="text" class="form-control" id="inlineFormInput" placeholder="Mobile No.">
+                              <label *ngIf="mobilenoError==true" style="color: red">Please enter your mobile no.</label>
+                              <label *ngIf="mobilenoError==false" style="color: red">&nbsp;</label>
                             </div>
                             <div class="col-auto">
-                              <label class="sr-only" for="inlineFormInputGroup">Username</label>
-                              <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Your Email">
+                              <label class="sr-only" for="inlineFormInputGroup">Email</label>
+                              <input (keyup)="validateField()" [(ngModel)]="contactus.email" type="text" class="form-control" id="inlineFormInputGroup" placeholder="Your Email">
+                              <label *ngIf="emailError==true" style="color: red">Please enter your email id.</label>
+                              <label *ngIf="emailError==false" style="color: red">&nbsp;</label>
                             </div>
                             
                             <div class="col-auto">
-                              <button type="submit" class="btn btn-warning">Enquiry</button>
+                                <label class="sr-only" for="inlineFormInputGroup"></label>
+                              <button (click)="sendMessage()" class="btn btn-warning">Enquiry</button>
+                              <label style="color: red">&nbsp;</label>
                             </div>
                           </div>
-                        </form>
+                         
+                       
                   </div>
+                   <div class="text-success" *ngIf="sucessMessage==true" id="sendmessage">Your message has been sent. Thank you!</div>
                 </div>
               </div>
             </div>
