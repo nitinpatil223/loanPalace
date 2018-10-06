@@ -16,3 +16,12 @@ export class RefferEarn{
   referredemail:string;
 
 }
+
+export class EnquiryWithSbiOrHdfc
+{
+name : string;
+email:string;
+mobile: string;
+amount:string;
+type:string; 
+}

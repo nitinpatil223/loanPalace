@@ -86,7 +86,7 @@
                       for Young generation in which their eligibility is increased.</p>
 
                       <div class="enquiry-btn blue-enquiry">
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                        <button type="button" class="btn btn-primary" (click)="setType(1)" data-toggle="modal" data-target="#exampleModalCenter">
                          Enquiry with SBI
                         </button>
                       </div>
@@ -97,7 +97,7 @@
                 is offered by every banks in which there is a specific time
                 period in which the borrower have to pay regular emi.</p>
                     <div class="enquiry-btn">
-                      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                      <button type="button" class="btn btn-primary" (click)="setType(2)" data-toggle="modal" data-target="#exampleModalCenter">
                        Enquiry with HDFC
                       </button>
                     </div>
@@ -224,28 +224,32 @@
         </button>
       </div>
       <div class="modal-body">
-        <form>
+       
             <div class="form-group">
                 <label for="exampleFormControlInput1">Your Name</label>
-                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nitin Patil">
+                <input (keyup)="validateField()" [(ngModel)]="enquirywith.name" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nitin Patil">
+                <label  *ngIf="nameError==true" style="color: red">Please enter your name.</label>
               </div>
           <div class="form-group">
             <label for="exampleFormControlInput1">Your Email</label>
-            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+            <input (keyup)="validateField()" [(ngModel)]="enquirywith.email" type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+            <label *ngIf="emailError==true" style="color: red">Please enter your email id.</label>
           </div>
           <div class="form-group">
-              <label for="exampleFormControlInput1">Your Contact</label>
-              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="9855667799">
+              <label for="exampleFormControlInput1">Your Mobile</label>
+              <input (keyup)="validateField()" [(ngModel)]="enquirywith.mobile" type="text" class="form-control" id="exampleFormControlInput1" placeholder="9855667799">
+              <label *ngIf="mobileError==true" style="color: red">Please enter your mobile no.</label>
             </div>
             <div class="form-group">
                 <label for="exampleFormControlInput1">Loan Required</label>
-                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="25,000,00">
+                <input (keyup)="validateField()" [(ngModel)]="enquirywith.amount" type="text" class="form-control" id="exampleFormControlInput1" placeholder="25,000,00">
+                <label *ngIf="amountError==true" style="color: red">Please enter your loan amount.</label>
               </div>
-        </form>
+        
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-danger" data-dismiss="modal">Send Enquiry</button>
+        <button type="button" (click)="sendMessage()" [disabled]="!validateSumbmitButton" class="btn btn-danger" data-dismiss="modal">Send Enquiry</button>
       </div>
     </div>
   </div>
