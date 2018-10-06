@@ -28,7 +28,7 @@ export class ContactComponent implements OnInit {
   sendMessage = function(){
     if(this.validateField())
     {
-      debugger;
+     
     this.contactusEncrypted.name = this._service.getEncryptedValue(this.contactus.name);
     this.contactusEncrypted.email = this._service.getEncryptedValue(this.contactus.email);
     this.contactusEncrypted.message = this._service.getEncryptedValue(this.contactus.message);
@@ -46,7 +46,7 @@ export class ContactComponent implements OnInit {
 
   validateField= function()
   {
-    debugger;
+   
     this.sucessMessage=false;
     if(this.contactus.name != undefined && this.contactus.name != null && this.contactus.name !="")
     {
