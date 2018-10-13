@@ -232,35 +232,26 @@ able to launch new offers and benefits to our customers.</p>
                   </p>
                   <div class="apply-form">
                      
-                          <div class="form-row align-items-center">
-                            <div class="col-auto">
-                              <label class="sr-only" for="inlineFormInput">Name</label>
+                          <div class="row">
+                            <div class="col-auto text-left">
                               <input (keyup)="validateField()" [(ngModel)]="contactus.name" type="text" class="form-control" id="inlineFormInput" placeholder="Name">
-                              <label  *ngIf="nameError==true" style="color: red">Please enter your name.</label>
-                              <label *ngIf="nameError==false" style="color: red">&nbsp;</label>
+                              <div class="form-control-feedback" *ngIf="nameError==true" style="color: red">Please enter your name.</div>
                             </div>
-                            <div class="col-auto">
-                              <label class="sr-only" for="inlineFormInput">Mobile No</label>
+                            <div class="col-auto text-left">
                               <input (keyup)="validateField()" [(ngModel)]="contactus.mobilenumber" type="text" class="form-control" id="inlineFormInput" placeholder="Mobile No.">
-                              <label *ngIf="mobilenoError==true" style="color: red">Please enter your mobile no.</label>
-                              <label *ngIf="mobilenoError==false" style="color: red">&nbsp;</label>
+                              <div class="form-control-feedback" *ngIf="mobilenoError==true" style="color: red">Please enter your mobile no.</div>
+
                             </div>
-                            <div class="col-auto">
-                              <label class="sr-only" for="inlineFormInputGroup">Email</label>
+                            <div class="col-auto text-left">
                               <input (keyup)="validateField()" [(ngModel)]="contactus.email" type="text" class="form-control" id="inlineFormInputGroup" placeholder="Your Email">
-                              <label *ngIf="emailError==true" style="color: red">Please enter your email id.</label>
-                              <label *ngIf="emailError==false" style="color: red">&nbsp;</label>
+                              <div class="form-control-feedback" *ngIf="emailError==true" style="color: red">Please enter your email id.</div>
                             </div>
-                            
                             <div class="col-auto">
-                                <label class="sr-only" for="inlineFormInputGroup"></label>
                               <button (click)="sendMessage()" class="btn btn-warning">Enquiry</button>
-                              <label style="color: red">&nbsp;</label>
                             </div>
                           </div>
-                         
-                       
                   </div>
+                  
                    <div class="text-success" *ngIf="sucessMessage==true" id="sendmessage">Your message has been sent. Thank you!</div>
                 </div>
               </div>
