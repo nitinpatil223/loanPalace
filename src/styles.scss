@@ -13,14 +13,15 @@ body {
 
 
 .navbar-blue {
-    background-color: #15549a;
-    border-color: #15549a;
+    background-color: #f2bd19;
+    border-color: #f2bd19;
     transition: all 0.2s ease-in-out;
     opacity: 1 !important;
     .navbar-nav { 
         .nav-link {
             color: #fff;
             padding:0 1rem;
+            font-size:16px;
             &.active {
                 color: #c82333;
                 font-weight: bold;
@@ -44,7 +45,7 @@ body {
 }
 
 .active-header {
-    background-color: #c82333;
+    background-color: #f2bd19;
     min-height: 75px !important;
     // .navbar-brand img {
     //     width: 225px;
@@ -485,7 +486,7 @@ footer {
     transition: all 0.2s ease-in-out;
     }
     .active-header {
-        background-color: #c82333;
+        background-color: #f2bd19;
         // min-height: 75px !important;
         // .navbar-brand img {
         //     width: 225px;
