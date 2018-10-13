@@ -10,7 +10,7 @@ import { LocationStrategy, HashLocationStrategy } from '../../node_modules/@angu
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';  
-
+import { Ng4LoadingSpinnerModule } from 'ng4-loading-spinner';
 
 @NgModule({
   declarations: [
@@ -24,7 +24,8 @@ import { CommonModule } from '@angular/common';
     AppRoutingModule,
     HttpModule,
     HttpClientModule,
-    CommonModule
+    CommonModule,
+    Ng4LoadingSpinnerModule.forRoot()
   ],
   providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy }],
   bootstrap: [AppComponent]

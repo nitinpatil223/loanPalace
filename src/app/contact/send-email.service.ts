@@ -5,23 +5,33 @@ import { ContactUs, RefferEarn, EnquiryWithSbiOrHdfc } from '../Model/ContactUs'
 import { environment } from '../../environments/environment';
 import 'rxjs/Rx';
 import { HttpClient } from '@angular/common/http';
+import { Ng4LoadingSpinnerService } from 'ng4-loading-spinner';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SendEmailService {
 
-  constructor(private _http: HttpClient) { }
+  constructor(private _http: HttpClient, private spinnerService: Ng4LoadingSpinnerService) { }
   public sendEmail (contactusEncrypted: ContactUs) {
-    return this._http.post(environment.apiUrl + 'Account/SendEmail',contactusEncrypted).subscribe();//.map(x => x.json());
+    this.spinnerService.show();
+    return this._http.post(environment.apiUrl + 'Account/SendEmail',contactusEncrypted).subscribe(data => {
+      this.spinnerService.hide();
+  });//.map(x => x.json());
   }
 
   public sendEmailEnquiry (enquirywithEncrpted: EnquiryWithSbiOrHdfc) {
-    return this._http.post(environment.apiUrl + 'Account/sendEmailEnquiry',enquirywithEncrpted).subscribe();//.map(x => x.json());
+    this.spinnerService.show();
+    return this._http.post(environment.apiUrl + 'Account/sendEmailEnquiry',enquirywithEncrpted).subscribe(data => {
+      this.spinnerService.hide();
+  });//.map(x => x.json());
   }
 
   public sendEmailForRefferAndEarn (refferearnEncrypted: RefferEarn) {
-    return this._http.post(environment.apiUrl + 'Account/sendEmailForRefferAndEarn',refferearnEncrypted).subscribe();//.map(x => x.json());
+    this.spinnerService.show();
+    return this._http.post(environment.apiUrl + 'Account/sendEmailForRefferAndEarn',refferearnEncrypted).subscribe(data => {
+      this.spinnerService.hide();
+  });//.map(x => x.json());
   }
 
   public getEncryptedValue(model : string){

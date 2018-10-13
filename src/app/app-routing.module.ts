@@ -9,6 +9,8 @@ import {ContactComponent} from './contact/contact.component';
 import { ReferAndEarnComponent } from './refer-and-earn/refer-and-earn.component';
 import { CommonModule } from '@angular/common';  
 
+
+
 const routes: Routes = [
 
   { path: 'home', component: HomeComponent },
